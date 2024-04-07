@@ -3,6 +3,7 @@ Dans la partie Elasticsearch on peut trouver toutes les resources nécessaires s
 
 pour creer ton image docker avec elasticsearch"
 
+# Docker
 docker pull docker.elastic.co/elasticsearch/elasticsearch:8.12.2
 
 docker network create elastic
@@ -24,6 +25,7 @@ curl -u elastic:votre_mot_de_passe -k -X DELETE "https://localhost:9200/votre_in
 **exemple dans mon cas:**
 
 export ELASTIC_PASSWORD='QANe83Fe+mfgKSOd94Zv'
+# Test
 curl --cacert /home/kebe/langchain/elasticshearch/http_ca.crt -u elastic:$ELASTIC_PASSWORD https://localhost:9200/file_chatbot
 
 
