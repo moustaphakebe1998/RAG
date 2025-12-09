@@ -412,9 +412,8 @@ async def get_stats():
 if __name__ == "__main__":
     import uvicorn
     
-    print("\n🌐 Démarrage du serveur FastAPI...")
-    print("📍 URL: http://localhost:8000")
-    print("📚 Documentation: http://localhost:8000/docs")
-    print("\nAppuyez sur Ctrl+C pour arrêter\n")
+    print("\n Démarrage du serveur FastAPI...")
+    print(" URL: http://localhost:8000")
+    print(" Documentation: http://localhost:8000/docs")
     
     uvicorn.run(app, host="0.0.0.0", port=8000)
