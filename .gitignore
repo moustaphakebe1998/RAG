@@ -1,1 +1,4 @@
 GenAI/GENAI_3_RAG langchain.ipynb
+.DS_Store
+RAG-Azure-Transformer-Elasticsearch/app/__pycache__/
+RAG-Azure-Transformer-Elasticsearch/.DS_Store
