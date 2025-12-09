@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: rag-backend-azure
+    ports:
+      - "8000:8000"
+    
+    environment:
+      - ES_URL=https://elastic:Z25ft0VLU2fpiqOXRSEc@host.docker.internal:9200
+      - ES_INDEX=docs_rag
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - AZURE_OPENAI_DEPLOYMENT=${AZURE_OPENAI_DEPLOYMENT}
+      - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION}
+    
+    volumes:
+      - ./app:/app/app
+      - ./.env:/app/.env
+      - ./files:/app/files
+      - ./requirements.txt:/app/requirements.txt
+    
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    
+    restart: unless-stopped
